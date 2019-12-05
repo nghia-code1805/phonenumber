@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<a th:href="@{/list-category}"> back to list Category</a>
+<form th:action="@{/update-category}" method="post" th:object="${categories}">
+    <table>
+        <td><input type="hidden" th:field="*{catergory_id}"></td>
+        <tr>
+            <td> name</td>
+            <td><input type="text" th:field="*{catergory_name}"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text" th:field="*{catergory_description}"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">update</button></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

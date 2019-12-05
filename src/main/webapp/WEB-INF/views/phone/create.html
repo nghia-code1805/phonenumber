@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th>
+<head>
+<meta charset="UTF-8">
+    <title>create phone</title>
+</head>
+
+<body>
+<h1>create phone</h1>
+
+<a href="/list-phone">back to phone List</a>
+
+<form th:action="@{/save-phone}" th:object="${phones}" method="post">
+    <table border="1">
+        <tr>
+            <td>name</td>
+            <td><input type="text" th:field="*{phoneName}"></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="text" th:field="*{dateOfPurchase}"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text" th:field="*{description}"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" th:field="*{phone_price}"></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <select th:field="*{category}">
+                    <option th:each="p : ${categories}" th:value="${p.catergory_id}" th:text="${p.catergory_name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create Phone"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

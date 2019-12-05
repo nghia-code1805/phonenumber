@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>create Category</h1>
+
+<a th:href="@{/list-category}">back to Category list</a>
+
+<form th:action="@{/save-category}" th:object="${categories}" method="post">
+    <table border="1">
+        <tr>
+            <td>name</td>
+            <td><input type="text" th:field="*{catergory_name}"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text" th:fiend="*{catergory_description}"></td>
+        </tr>
+        <td></td>
+        <td><button type="submit">Create</button></td>
+    </table>
+
+</form>
+</body>
+</html>

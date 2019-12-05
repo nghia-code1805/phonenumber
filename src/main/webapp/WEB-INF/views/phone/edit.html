@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th>
+<head>
+    <meta charset="UTF-8">
+    <title>edit phone</title>
+</head>
+<body>
+<a href="/">back to home</a>
+<a href="/list-phone"> back to phone list</a>
+
+<form th:action="@{/update-phone}" method="post" th:object="${phones}">
+<input type="hidden" name="id">
+<!--    th:field="*{phone_id}"-->
+<table>
+
+    <tr>
+        <td>name</td>
+        <td><input type="text" th:field="*{phoneName}"></td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td><input type="text" th:field="*{dateOfPurchase}"></td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td><input type="text" th:field="*{description}"></td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td><input type="text" th:field="*{phone_price}"></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><button type="submit">update</button></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
